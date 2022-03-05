@@ -42,4 +42,12 @@ public class WinningNumbers {
 
         return count;
     }
+
+    @Override
+    public String toString() {
+        return "WinningNumbers{" +
+                "winningLotto=" + winningLotto +
+                ", bonusNumber=" + bonusNumber +
+                '}';
+    }
 }

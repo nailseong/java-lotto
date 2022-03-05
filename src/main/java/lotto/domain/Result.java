@@ -31,4 +31,11 @@ public class Result {
 
         return totalProfit;
     }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "result=" + result +
+                '}';
+    }
 }
