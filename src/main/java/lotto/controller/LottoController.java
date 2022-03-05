@@ -23,7 +23,7 @@ public class LottoController {
         final Lottos autoLottos = Lottos.createByAuto(money.getQuantityOfAuto(quantityOfManual));
 
         OutputView.printInitResult(manualLottos, autoLottos);
-        return Lottos.of(manualLottos.getLottos(), autoLottos.getLottos());
+        return manualLottos.add(autoLottos);
     }
 
     private int inputQuantityOfManual(Money money) {

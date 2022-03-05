@@ -53,7 +53,7 @@ public class LottosTest {
 
     @Nested
     @DisplayName("2개의 Lottos를 하나의 Lottos로 합치는 메서드는")
-    class Of {
+    class Add {
 
         @Nested
         @DisplayName("2개의 Lottos가 주어지면")
@@ -62,15 +62,10 @@ public class LottosTest {
             @Test
             @DisplayName("하나로 합쳐진 Lottos를 반환한다.")
             void It_returns_new_lottos() {
-                final List<Lotto> lottos1 = List.of(
-                        Lotto.createByManual(List.of(1, 2, 3, 4, 5, 6)),
-                        Lotto.createByManual(List.of(7, 8, 9, 10, 11, 12)));
-                final List<Lotto> lottos2 = List.of(
-                        Lotto.createByManual(List.of(11, 12, 13, 14, 15, 16)),
-                        Lotto.createByManual(List.of(21, 22, 23, 24, 25, 26)),
-                        Lotto.createByManual(List.of(31, 32, 33, 34, 35, 36)));
+                final Lottos lottos1 = Lottos.createByAuto(2);
+                final Lottos lottos2 = Lottos.createByAuto(3);
 
-                final Lottos lottos = Lottos.of(lottos1, lottos2);
+                final Lottos lottos = lottos1.add(lottos2);
 
                 assertThat(lottos.getCount()).isEqualTo(5);
             }

@@ -27,8 +27,8 @@ public class Lottos {
         return new Lottos(lottos);
     }
 
-    public static Lottos of(List<Lotto> lottos1, List<Lotto> lottos2) {
-        return new Lottos(Stream.concat(lottos1.stream(), lottos2.stream())
+    public Lottos add(Lottos lottos) {
+        return new Lottos(Stream.concat(this.lottos.stream(), lottos.getLottos().stream())
                 .collect(Collectors.toList()));
     }
 
